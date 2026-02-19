@@ -416,9 +416,10 @@ xclip
 .cd-headline.clip span {
   display: inline-block;
   padding: .2em 0;
-  color: #ffffff;
-  font-size: 30px;
+  color: #575757;
+  font-size: 15px;
 }
+
 .cd-headline.clip span b{
 	text-transform: uppercase;
 }
@@ -1239,23 +1240,23 @@ hr.invis1 {
 
 
 .gallery-single{
-	margin: 50px 25px;;
+	margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 50px;
     transition: 0.5s;
    	position: relative;
-	overflow: hidden;
+	overflow: auto;
 	-webkit-box-shadow: 0 0 10px #ccc;
 	box-shadow: 0 0 10px #ccc;
 } 
 
 .gallery-single:hover {
     scale: 105%;
-    -webkit-transition: .5s;
     transition: .5s;
 }
 
 .gallery-list {
     position: absolute;
-    -webkit-transition: all .5s;
     opacity: 1;
     transition: all .5s;
 }
@@ -1875,3 +1876,55 @@ hr.invis1 {
     border-color: rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
 }
+
+
+.containerbig {
+    width: 90vw;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 600px) {
+
+    .containerbig {
+        max-width: 100;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .containerbig {
+        max-width: 738px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .containerbig {
+        max-width: 962px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .containerbig {
+        max-width: 1250px;
+    }
+}
+
+
+@media screen and (min-width: 1920px) {
+
+    .containerbig {
+        max-width: 1890px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .containerbig {
+        width: 1890px;
+    }
+}
+
