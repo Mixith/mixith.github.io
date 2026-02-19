@@ -1243,6 +1243,7 @@ hr.invis1 {
 	margin-right: 25px;
     margin-left: 25px;
     margin-top: 50px;
+    margin-bottom: 50px;
     transition: 0.5s;
    	position: relative;
 	overflow: auto;
@@ -1879,7 +1880,7 @@ hr.invis1 {
 
 
 .containerbig {
-    width: 90vw;
+    width: 80vw;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
