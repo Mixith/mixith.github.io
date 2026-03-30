@@ -101,12 +101,7 @@
         <div class="container section-title text-center">
                 <p style="padding-top: 50px">My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
                     but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
-        </div><!-- end title -->
-    
-        <div class="iframe-container">  
-        <iframe class="responsive-iframe" src="tbexport.html" frameBorder="0">
-        </iframe>
-        </div>
+        </div><!-- end title -->  
 
         <div class="container section-title text-center">
                 <p style="padding-top: 50px"></p>
@@ -121,12 +116,49 @@
             </p>
         </div><!-- end title -->
 
-        <img src="uploads/BottleShader/BottleShaderComparison.png" class="img-fluid" style = "padding: 10px;">
 
-        <div class="container section-title text-center">
-                <p style="padding-top: 50px">The material isn't the cheapest but as we can see in the comparison above, it still has less shader complexity than a translucent material 
-                    that only uses a color input.</p>
-            </div><!-- end title -->
+        <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Central Plane</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The central plane of the bottle is created using a modified version of the unreal "VirtualPlaneCoordinates" 
+                        node which I have gone into and tweaked a bit to make the UVs it outputs scale to my preference. I later 
+                        mask off the output with the help of a spheremask that gets it radius input from looking at the object bounds and rotation, making it fit the bottle.  
+                    </p>
+                    <p style="padding-top: 25px"> This isn't a flawless solution as it only accounts for round bottles.</p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/MiddlePlaneBottleShader.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Shader Complexity</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">If we look at the shader complexity we can see that the material is somewhat expensive but still cheaper compared to translucency.
+                        The translucent material I am using in this comparison is the unreal default with just a color input plugged in. 
+                    </p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleShaderComparison.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
     </div>
 	
 	<div id="portfolio" class="section lb">
