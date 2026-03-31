@@ -48,7 +48,7 @@ body.demos .service-widget h3 {
     border-bottom: 1px solid #ededed;
     font-size: 18px;
     padding: 20px 0;
-    background-color: #ffffff;
+    background-color: #ffffff; 
 }
 
 body.demos .service-widget {
@@ -84,7 +84,7 @@ h6 {
     padding: 0 0 10px 0;
     font-weight: normal;
     line-height: 120% !important;
-    color: #333333;
+    color: #fff;
     margin: 0
 }
 
@@ -500,11 +500,11 @@ xclip
 }
 
 .section.wb {
-    background-color: #ffffff;
+    background-color: #181a1b; /* #ffffff */
 }
 
 .section.lb {
-    background-color: #f2f3f5;
+    background-color: #1e2122; /* #f2f3f5 */
 }
 
 .section.db {
@@ -1213,26 +1213,26 @@ hr.invis1 {
 }
 
 .filter-button-group{
-	border: 1px solid #e4e4e4;
+	border: 1px solid #4c5257; /* #e4e4e4 */
 	border-radius: 0px;
 	margin: 10px 0px;
 	display: inline-block;
 }
 
 .filter-button-group button.active{
-	background: #333333;
-	color: #fff;
+	background: #fff;
+	color: #181a1b; /* #fff */ 
 	box-shadow: 2px 20px 45px 5px rgba(0,0,0,.2);	
 }
 
 .filter-button-group button{
-	color: #333;
+	color: #fff;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 14px;
 	cursor: pointer;
-	background: #fff;
+	background: #181a1b;
 	padding: 12px 40px;
 	border: none;
 	border-radius: 0px;
@@ -1823,7 +1823,7 @@ hr.invis1 {
   width: 70px;
   height: 70px;
   border-style: solid;
-  border-top-color: #FFF;
+  border-top-color: #262a2b; /* #FFF */
   border-right-color: #FFF;
   border-left-color: transparent;
   border-bottom-color: transparent;
