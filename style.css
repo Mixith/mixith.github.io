@@ -24,7 +24,7 @@
 -------------------------------------------------------------------*/
 
 body {
-    color: #999999;
+    color: #e4e4e4; /* #999999 */
     font-size: 14px;
     font-family: 'Roboto Mono', monospace;
     line-height: 1.80857;
@@ -416,7 +416,7 @@ xclip
 .cd-headline.clip span {
   display: inline-block;
   padding: .2em 0;
-  color: #575757;
+  color: #d1d1d1; /* #575757 */
   font-size: 15px;
 }
 
@@ -448,7 +448,7 @@ xclip
 #mainNav {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #333333;
+    background-color: #262a2b; /* #333333 */
 }
 
 #clouds{
@@ -556,7 +556,7 @@ xclip
 }
 
 .section-title p {
-    color: #999;
+    color: #c2c2c2;
     font-weight: 400;
     font-size: 18px;
     line-height: 33px;
@@ -581,13 +581,13 @@ xclip
 
 
 .btn-hover-new{
-	color: #333333;
+	color: #b9b9b9;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
 	position: relative;
-	border: 1px solid #333333;
+	border: 1px solid #b9b9b9;
 	overflow: hidden;
 	padding: 0px 18px;
 	display: inline-block;
@@ -1247,8 +1247,8 @@ hr.invis1 {
     transition: 0.5s;
    	position: relative;
 	overflow: auto;
-	-webkit-box-shadow: 0 0 10px #ccc;
-	box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #5e5e5e; /* #ccc */
+	box-shadow: 0 0 10px #5e5e5e; /* #ccc */
 } 
 
 .gallery-single:hover {
@@ -1306,9 +1306,9 @@ hr.invis1 {
 }
 
 .post-box{
-	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-	background: #ffffff;
+	-webkit-box-shadow: 0px 5px 35px 0px rgba(201, 201, 201, 0.15);
+	box-shadow: 0px 5px 35px 0px rgba(187, 187, 187, 0.15);
+	background: #3d3d3d; /* #ffffff */
     transition: 0.5s;
 }
 
@@ -1334,7 +1334,7 @@ hr.invis1 {
 
 .post-info{
 	padding: 0px 15px 40px 15px;
-	background: #ffffff;
+	background: #3d3d3d; /* #ffffff */
 	text-align: left;
 	margin-top: 40px;
 }
@@ -1617,7 +1617,7 @@ hr.invis1 {
 
 .copyrights {
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
-    background-color: #1f1f1f;
+    background-color: #1f1f1f; /* #1f1f1f */
     box-sizing: border-box;
     width: 100%;
     text-align: left;
