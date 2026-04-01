@@ -60,70 +60,89 @@
               <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="#index.html#portfolio">Portfolio</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#blog">Projects</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#blog">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-	
-    <!--
-	<section id="home" class="main-banner parallaxie" style="background: url('uploads/HighresScreenshot00000.png')">
-		<div class="heading">
-			<h1>Elvira Paxborn</h1>
-			<p>Technical Art student at The Game Assembly Malmö.
-            <br>Cat haver, frog enjoyer.
-            <br>
-            <br>This website is hella WIP, don't judge tqoo hard thanks :)</p>
 
-			<h3 class="cd-headline clip is-full-width">
+    <div class="container section-title text-center">
+            </div><!-- this is just for spacing -->
 
-				<span>What I do: </span>
-				<span class="cd-words-wrapper">
-					<b class="is-visible">Technical Art</b>
-					<b>Environment Art</b>
-					<b>Silly Stuff</b>
+    <div id="projects" class="section lb">
+		<div class="container">
+			<div class="section-title text-center">
+                <h3>Bottle Shader +(Simple Bottle Generator)</h3>
+            </div><!-- end title -->
+            <div class="gallery-menu row">
+		
+	</div>
+    </div>		
 
-				</span>
-			</h3>
-		</div>
-	</section>
-    -->
+    <div class = "containerbig text-center">
 
-    <!-- This cloud shit and I have a fucking vendetta against each other
-	<svg id="clouds2" class="hidden-md" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
-        <path d="M-5 100 Q 0 -35 5 100 Z
-            M0 100 Q 5 -80 10 100
-            M5 100 Q 10 -30 15 100
-            M10 100 Q 15 -55 20 100
-            M15 100 Q 20 -45 25 100
-            M20 100 Q 25 -30 30 100
-            M25 100 Q 30 -65 35 100
-            M30 100 Q 35 -45 40 100
-            M35 100 Q 40 -40 45 100
-            M40 100 Q 45 -30 50 100
-            M45 100 Q 50 -60 55 100
-            M50 100 Q 55 -40 60 100
-            M55 100 Q 60 -65 65 100
-            M60 100 Q 65 -40 70 100
-            M65 100 Q 70 -85 75 100
-            M70 100 Q 75 -30 80 100
-            M75 100 Q 80 -40 85 100
-            M80 100 Q 85 -70 90 100
-            M85 100 Q 90 -70 95 100
-            M90 100 Q 95 -35 100 100
-            M95 100 Q 100 -45 105 100 Z">
-        </path>
-    </svg> -->
+        <div class="container section-title text-center">
+                <p>My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
+                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
+            </div><!-- end title -->
+        
+        <img src="uploads/BottleShader/BottlesClear.png" class="img-fluid" style = "padding: 10px;">
+
+        <div class="container section-title text-center">
+                <p style="padding-top: 50px">My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
+                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
+        </div><!-- end title -->  
+
+        <div class="iframe-container">  
+        <iframe class="responsive-iframe" src="tbexport.html" frameBorder="0" scroll="no">
+        </iframe>
+        </div>
+
+        <div class="container section-title text-center">
+                <p style="padding-top: 50px"></p>
+            </div><!-- end title -->
+
+        <img src="uploads/BottleShader/BottlesBeer.png" class="img-fluid">
+        
+        <div class="container section-title text-center">
+            <p style="padding-top: 50px">I also tried the shader out on a bottle with custom textures that I made for a previous project.
+                At first this had the unintended effect of the liquid being displayed in front of the label so I revisited the material
+                 to make the liquid mask respect the alpha channel from custom textures.
+            </p>
+        </div><!-- end title -->
+
+
+        <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Shader Complexity</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">If we look at the shader complexity we can see that the material is somewhat expensive but still cheaper compared to translucency.
+                        The translucent material I am using in this comparison is the unreal default with just a color input plugged in. 
+                    </p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleShaderComparison.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+    </div>
 	
 	<div id="portfolio" class="section lb">
 		<div class="container">
@@ -142,7 +161,7 @@
 			</div>
 		</div>
 	</div>
-    </div>		
+    </div>	
 
     
 	<div class="containerbig">
@@ -215,67 +234,65 @@
 	<div id="blog" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
-                <h3>Projects</h3>
-                <p>Game projects from my time at The Game Assembly [TGA] and PlaygroundSquad [PSQ]!</p>
+                <h3>Blog</h3>
+                <p>Currently under construction, please check back in the future!</p>
             </div><!-- end title -->
 			
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<a href="finderskeepers.html"><div class="post-box">
+					<div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/FindersKeepers/FindersKeepersThumbnail.png" class="img-fluid" alt="post-img" />
+							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span></span>
-								<span>TGA</span>
+								<span>01</span>
+								<span>Apr</span>
 							</div>
-						</div></a>
+						</div>
 						<div class="post-info">
-							<h4>Finders Keepers</h4>
+							<h4>???</h4>
 							<ul>
-                                <li>by Water Leaks</li>
-                                <li>in 15 Weeks</li>
+                                <li>by Elvira Paxborn</li>
+                                <li>Apr 1, 2026</li>
                             </ul>
-							<p>Play as the nimble thief Penny while you infiltrate the kings castle to retrieve an imortant item for the Baron!</p>
+							<p>Currently under construction, check back later.</p>
 						</div>
 					</div>
 				</div>
-
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<a href="spite.html"><div class="post-box">
+					<div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Spite/SpiteThumbnail.png" class="img-fluid" alt="post-img" />
+							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span></span>
-								<span>TGA</span>
+								<span>01</span>
+								<span>Apr</span>
 							</div>
-						</div></a>
+						</div>
 						<div class="post-info">
-							<h4>Spite: Bleeding Skies</h4>
+							<h4>???</h4>
 							<ul>
-                                <li>by Water Leaks</li>
-                                <li>in 15 Weeks</li>
+                                <li>by Elvira Paxborn</li>
+                                <li>Apr 1, 2026</li>
                             </ul>
-							<p>Play as earths chamption and wield divine power to bring down the cult of a false prophet who is spreading lies, fear and madness.</p>
+							<p>Currently under construction, check back later.</p>
 						</div>
 					</div>
 				</div>
-
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<a href="ecopoint.html"><div class="post-box">
+					<div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Ecopoint/EcopointThumbnail.png" class="img-fluid" alt="post-img" />
+							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span></span>
-								<span>PSQ</span>
+								<span>01</span>
+								<span>Apr</span>
 							</div>
-						</div></a>
+						</div>
 						<div class="post-info">
-							<h4>Ecopoint</h4>
+							<h4>???</h4>
 							<ul>
-                                <li>by Kloss Ohlson</li>
-                                <li>in 9 Weeks</li>
+                                <li>by Elvira Paxborn</li>
+                                <li>Apr 1, 2026</li>
                             </ul>
-							<p>The environment around you has become corrupted, as a researcher it is your task to find out why and put a stop to it.</p>
+							<p>Currently under construction, check back later.</p>
 						</div>
 					</div>
 				</div>
@@ -283,83 +300,18 @@
 		</div>	
 		</div>
 	</div>
-    <!-- These clouds are nice... for some fucking reason. They should speak to the clouds above. 
-    <svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
-        <path d="M-5 100 Q 0 20 5 100 Z
-            M0 100 Q 5 0 10 100
-            M5 100 Q 10 30 15 100
-            M10 100 Q 15 10 20 100
-            M15 100 Q 20 30 25 100
-            M20 100 Q 25 -10 30 100
-            M25 100 Q 30 10 35 100
-            M30 100 Q 35 30 40 100
-            M35 100 Q 40 10 45 100
-            M40 100 Q 45 50 50 100
-            M45 100 Q 50 20 55 100
-            M50 100 Q 55 40 60 100
-            M55 100 Q 60 60 65 100
-            M60 100 Q 65 50 70 100
-            M65 100 Q 70 20 75 100
-            M70 100 Q 75 45 80 100
-            M75 100 Q 80 30 85 100
-            M80 100 Q 85 20 90 100
-            M85 100 Q 90 50 95 100
-            M90 100 Q 95 25 100 100
-            M95 100 Q 100 15 105 100 Z">
-        </path>
-    </svg> -->
-
-    <div id="about" class="section wb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="message-box">                        
-                        <h2>About Me</h2>
-
-                            <h3 class="cd-headline clip is-full-width">
-
-                           <!-- <span>What I do: </span> -->
-                            
-                            <span class="cd-words-wrapper">
-                                <b class="is-visible">Technical Artist</b>
-                                <b>Environment Artist</b>
-                                <b>Cat haver</b>
-                                <b>Frog enjoyer</b>
-                                <b>Silly goober</b>
-
-                            </span>
-                            </h3>
-                        
-                        <p></p>
-                        <p> I'm a Technical Artist currently studying at The Game Assembly, with some previous experience in Environment art. I enjoy making shaders and creating tools to decrease repetitive tasks. In my free time I mostly find myself playing games, hanging out with friends, reading, and learning new things!</p>
-						<p>One of my favourite things in games is exploration. I love seeing all the game has to offer but I especially enjoy playing in unintended ways to see if I can somehow break levels by either skipping sections or jailbreaking my way out of the map.</p>
-                        <p>Feel free to download my CV or contact me with any of the means below. If there is anything you are interested in asking or want to talk about I'd love to chat!</p>
-
-                        <a href="uploads/ElviraPaxborn_CV.pdf" target="_blank" class="sim-btn btn-hover-new" data-text="Download CV"><span>Download CV</span></a>
-                        <a href="https://www.linkedin.com/in/elvira-paxborn-91b35428a/" target="_blank" class="sim-btn btn-hover-new" data-text="LinkedIn"><span>LinkedIn</span></a>
-                        <a href="mailto:elvira.paxbornmain@gmail.com" target="_blank" class="sim-btn btn-hover-new" data-text="Email"><span>Email</span></a>
-                    </div><!-- end messagebox -->
-                </div><!-- end col -->
-
-                <div class="col-md-6">
-                    <div class="right-box-pro wow fadeIn">
-                        <img src="uploads/Website_Selfie.jpg" alt="" class="img-fluid img-rounded">
-                    </div><!-- end media -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+    </div>
 
     <div class="copyrights">
         <div class="container">
             <div class="footer-distributed">
                 <div class="footer-left">
                     <p class="footer-links">
-                        <a href="#">Home</a>
-                        <a href="#portfolio">Portfolio</a>
-                        <a href="#blog">Projects</a>
-                        <a href="#about">About</a>
-                        <a href="#about">Contact</a>
+                        <a href="index.html#">Home</a>
+                        <a href="index.html#portfolio">Portfolio</a>
+                        <a href="index.html#blog">Projects</a>
+                        <a href="index.html#about">About</a>
+                        <a href="index.html#about">Contact</a>
                     </p>
                     <p class="footer-company-name">All Rights Reserved. &copy; 2026 <a href="#">Elvira Paxborn </a> Design By : 
 					<a href="https://html.design/">html design</a></p>
