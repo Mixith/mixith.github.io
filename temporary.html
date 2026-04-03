@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>Elvira Paxborn - Portfolio</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top" class="politics_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div id="main-ld">
+			<div id="loader"></div>  
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+	
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+			<img class="img-fluid" src="uploads/elvira_logo.png" alt="" />
+		</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+          <!--  <li class="nav-item">
+              <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container section-title text-center">
+            </div><!-- this is just for spacing -->
+
+    <div id="projects" class="section lb">
+		<div class="container text-center">
+			<div class="section-title text-center">
+                <h3>Bottle Shader +(Simple Bottle Generator)</h3>
+            </div><!-- end title -->
+            <div class="gallery-menu row">
+		
+	</div>
+    </div>		
+
+    <div class = "containerbig text-center">
+
+        <div class="container section-title text-center">
+                <p>My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
+                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
+        </div><!-- end title -->
+        
+        <img src="uploads/Showcase.png" class="img-fluid" width="80%">
+
+        <img src="uploads/BottleShader/BottleMedieval.png" class="img-fluid" style = "padding: 10px;">
+
+        <img src="uploads/BottleShader/BeerBottleLogo.png" class="img-fluid" style = "padding: 10px;">
+        
+        <div class="container section-title text-center">
+            <p style="padding-top: 10px">
+            </p>
+        </div><!-- end title -->
+
+        <img src="uploads/Breakdown.png" class="img-fluid" width="80%">
+
+        <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/MiddlePlaneBottleShader.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 50px">Central Plane</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The central plane of the bottle is created using a modified version of the unreal "VirtualPlaneCoordinates" 
+                        node which I have gone into and tweaked a bit to make the UVs it outputs scale to my preference. I later 
+                        mask off the output with the help of a spheremask that gets it radius input from looking at the object bounds and rotation, making it fit the bottle.  
+                    </p>
+                    <p style="padding-top: 25px"> This isn't a flawless solution as it only accounts for round bottles.</p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-bottom: 50px;">
+
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Side Mask</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The side mask is a bit simpler. I get it by subtracting the object position from the world position which gives me the middle of the
+                        bottle. I want to lerp through a filled bottle and an empty bottle with my liquid controller so I adjust this mask with the help of the blue channel from the
+                        object bounds. I add it to one output of the lerp while subtracting it from the other to create the filled and empty versions.  
+                    </p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleShaderSideMask.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Shader Complexity</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">If we look at the shader complexity we can see that the material is somewhat expensive but still cheaper compared to translucency.
+                        The translucent material I am using in this comparison is the unreal default with just a color input plugged in. 
+                    </p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleShaderComparison.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+    </div>
+	
+	<div id="portfolio" class="section lb">
+		<div class="container">
+			<div class="section-title text-left">
+               <!-- <h3>Portfolio</h3>
+                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p> -->
+            </div><!-- end title -->
+            <div class="gallery-menu row">
+		<div class="col-lg-12" style="text-align: center;">
+			<div class="button-group filter-button-group text-center">
+				<button class="active" data-filter="*">All</button>
+				<button data-filter=".gal_tech">Technical Art</button>
+				<button data-filter=".gal_env">Environment Art</button>
+                <button data-filter=".gal_misc">Misc</button>
+				<button data-filter=".gal_fun">Funsies</button>
+			</div>
+		</div>
+	</div>
+    </div>		
+
+    
+	<div class="containerbig">
+        <div class="gallery-list">
+
+            <div class="col-md-4 gallery-grid gal_misc gal_fun">
+                <div class="gallery-single">
+                    <a href="moraKniv.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image"></a>
+                </div>
+            </div>
+				
+            <div class="col-md-4 gallery-grid gal_misc">
+                <div class="gallery-single" >
+                    <img src="uploads/RolleiflexCamera/Thumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay">
+                        <a href="uploads/Balling3.gif" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                </div>
+            </div>
+				
+            <div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="inn.html" target="_blank"> <img src="uploads/Inn/Thumbnail.jpg" class="img-fluid" alt="Image"></a>
+                </div>
+            </div>
+				
+            <div class="col-md-4  gallery-grid gal_env gal_tech">
+                <div class="gallery-single" >
+                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
+                </div>
+            </div>
+				
+            <div class="col-md-4  gallery-grid gal_tech gal_fun">
+                <div class="gallery-single">
+                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
+                </div>
+            </div>
+				
+            <div class="col-md-4  gallery-grid gal_fun gal_tech">
+                <div class="gallery-single">
+                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<div id="blog" class="section lb">
+		<div class="container">
+			<div class="section-title text-left">
+                <h3>Blog</h3>
+                <p>Currently under construction, please check back in the future!</p>
+            </div><!-- end title -->
+			
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-lg-4">
+					<div class="post-box">
+						<div class="post-thumb">
+							<img src="uploads/blog-01.jpg" class="img-fluid" alt="post-img" />
+							<div class="date">
+								<span>01</span>
+								<span>Apr</span>
+							</div>
+						</div>
+						<div class="post-info">
+							<h4>???</h4>
+							<ul>
+                                <li>by Elvira Paxborn</li>
+                                <li>Apr 1, 2026</li>
+                            </ul>
+							<p>Currently under construction, check back later.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-lg-4">
+					<div class="post-box">
+						<div class="post-thumb">
+							<img src="uploads/blog-02.jpg" class="img-fluid" alt="post-img" />
+							<div class="date">
+								<span>01</span>
+								<span>Apr</span>
+							</div>
+						</div>
+						<div class="post-info">
+							<h4>???</h4>
+							<ul>
+                                <li>by Elvira Paxborn</li>
+                                <li>Apr 1, 2026</li>
+                            </ul>
+							<p>Currently under construction, check back later.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-lg-4">
+					<div class="post-box">
+						<div class="post-thumb">
+							<img src="uploads/blog-03.jpg" class="img-fluid" alt="post-img" />
+							<div class="date">
+								<span>01</span>
+								<span>Apr</span>
+							</div>
+						</div>
+						<div class="post-info">
+							<h4>???</h4>
+							<ul>
+                                <li>by Elvira Paxborn</li>
+                                <li>Apr 1, 2026</li>
+                            </ul>
+							<p>Currently under construction, check back later.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		</div>
+	</div>
+    </div>
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="#">Home</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Blog</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                    </p>
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2026 <a href="#">Elvira Paxborn </a> Design By : 
+					<a href="https://html.design/">html design</a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+	<!-- Camera Slider -->
+	<script src="js/jquery.mobile.customized.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script> 
+	<script src="js/parallaxie.js"></script>
+	<script src="js/headline.js"></script>
+	<!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.vide.js"></script>
+
+</body>
+</html>
