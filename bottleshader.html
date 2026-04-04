@@ -82,7 +82,7 @@
     <div id="projects" class="section lb">
 		<div class="container text-center">
 			<div class="section-title text-center">
-                <h3>Bottle Shader +(Simple Bottle Generator)</h3>
+                <h3>Bottle Shader +(Simple Bottle Tool)</h3>
             </div><!-- end title -->
             <div class="gallery-menu row">
 		
@@ -212,8 +212,12 @@
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">...  
+                    <p style="padding-top: 50px">To create the illusion that the material is translucent I use a cubemap texture with unreals refraction node and then blend
+                        that with the color of the bottle through a lerp. To maintain the illusion you have to have a cubemap of the area where the bottles are placed, otherwise
+                        it will look a bit off.
                     </p>
+                    <p style="padding-top: 25px">Left picture is the refracted cubemap, middle is it blended with the color and right is the final output. 
+                 
                 </div><!-- end title -->
             </div><!-- end col -->
         </div><!-- end row -->   
@@ -227,7 +231,8 @@
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">...  
+                    <p style="padding-top: 50px">The normals are quite simple, for the central plane I use the UV output from the VirtualPlaneCoordinates node and add a texture of a water normal that
+                        is slightly panning and rotating. This is then lerped with the bottles normals to make it feel like the plane is inside of the bottle.
                     </p>
                 </div><!-- end title -->
 
@@ -239,11 +244,34 @@
 
         </div><!-- end row -->   
 
+                 <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleTextureComparison.png" alt="" class="img-fluid" height="50%">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 150px">Custom Textures</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px"> I also quickly added support for custom textures and tried it out on a bottle from a previous project I made. 
+                        
+                    </p>
+                    <p style="padding-top: 50px">At first it had some issues since the liquid mask didn't have a check to respect the labels of a custom texture.
+                        To fix this I just went into the material again and changed it so the liquid mask would also be multiplied by the textures alpha channel where I had masked
+                        off the labels.
+                    </p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row --> 
+
         <div class="row" style="padding-top: 50px;">
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Shader Complexity</h2>
+                    <h2 style="padding-top: 100px;">Shader Complexity</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
@@ -261,6 +289,17 @@
 
         <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
 
+        <div class="container section-title text-center">
+            <p style="padding-top: 50px">I had a lot of fun with this project and am pretty happy with the result but if I could go back and work more on it I would like to take another
+                look at how the central plane scales when it rotates since I believe my current solution could use improvement.
+            </p>
+
+            <div class="message-box">                        
+                <h2 style="padding-top: 50px;">Thanks for reading!</h2>
+             </div><!-- end messagebox -->
+        </div><!-- end title -->
+
+        <img src="uploads/Section.png" class="img-fluid">
 
     </div>
     </div>
