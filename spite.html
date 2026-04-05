@@ -60,7 +60,7 @@
               <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#index.html#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#portfolio">Portfolio</a>
             </li>
 			<li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="index.html#blog">Projects</a>
@@ -69,20 +69,20 @@
               <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#about">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <div class="container section-title text-center">
+	
+        <div class="container section-title text-center">
             </div><!-- this is just for spacing -->
 
     <div id="projects" class="section lb">
-		<div class="container">
+		<div class="container text-center">
 			<div class="section-title text-center">
-                <h3>Bottle Shader +(Simple Bottle Generator)</h3>
+                <h3>Spite: Bleeding Skies</h3>
             </div><!-- end title -->
             <div class="gallery-menu row">
 		
@@ -92,41 +92,198 @@
     <div class = "containerbig text-center">
 
         <div class="container section-title text-center">
-                <p>My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
-                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
-            </div><!-- end title -->
-        
-        <img src="uploads/BottleShader/BottlesClear.png" class="img-fluid" style = "padding: 10px;">
+                <p>Spite: Bleeding Skies was my first group project at The Game Assembly. We worked in our own custom engine "Bean" to create a diablo-like game.</p>
+        </div><!-- end title -->
 
-        <div class="container section-title text-center">
-                <p style="padding-top: 50px">My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
-                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
-        </div><!-- end title -->  
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 20px;">
 
+        <div class="message-box">                        
+                <h2 style="padding-top: 25px; padding-bottom: 25px;">Trailer</h2>
+        </div><!-- end messagebox -->
+
+        <div class="container">
         <div class="iframe-container">  
-        <iframe class="responsive-iframe" src="tbexport.html" frameBorder="0" scroll="no">
-        </iframe>
+            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/hyxQQT7NV8g" frameBorder="0">
+            </iframe>
+        </div>
         </div>
 
-        <div class="container section-title text-center">
-                <p style="padding-top: 50px"></p>
-            </div><!-- end title -->
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
 
-        <img src="uploads/BottleShader/BottlesBeer.png" class="img-fluid">
+        <img src="uploads/BottleShader/BottleMedieval.png" class="img-fluid" style = "padding: 10px;">
+
+        <img src="uploads/BottleShader/BeerBottleLogo.png" class="img-fluid" style = "padding: 10px;">
         
         <div class="container section-title text-center">
-            <p style="padding-top: 50px">I also tried the shader out on a bottle with custom textures that I made for a previous project.
-                At first this had the unintended effect of the liquid being displayed in front of the label so I revisited the material
-                 to make the liquid mask respect the alpha channel from custom textures.
+            <p style="padding-top: 10px">
             </p>
         </div><!-- end title -->
 
-
-        <div class="row" style="padding-bottom: 50px;">
+        <img src="uploads/Breakdown.png" class="img-fluid" width="80%">
+        
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/MiddlePlaneBottleShader.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Shader Complexity</h2>
+                    <h2 style="padding-top: 50px">Central Plane</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The central plane of the bottle is created using a modified version of the unreal "VirtualPlaneCoordinates" 
+                        node which I have gone into and tweaked a bit to make the UVs it outputs scale to my preference. I later 
+                        mask off the output with the help of a spheremask that gets it radius input from looking at the object bounds and rotation, making it fit the bottle.  
+                    </p>
+                    <p style="padding-top: 25px"> This isn't a flawless solution as it only accounts for round bottles.</p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Side Mask</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The side mask is a bit simpler. I get it by subtracting the object position from the world position which gives me the middle of the
+                        bottle. I want to lerp through a filled bottle and an empty bottle with my liquid controller so I adjust this mask with the help of the blue channel from the
+                        object bounds. I add it to one output of the lerp while subtracting it from the other to create the filled and empty versions.  
+                    </p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleShaderSideMask.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+
+                <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/Bottleclippingplane.gif" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 50px">Plane Clipping</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The central plane of the bottle also clips away when you view the bottle from below to prevent some funkyness with being able to see small
+                        parts of the central plane through the sidemask.
+                    </p>
+                    <p style="padding-top: 25px"> This is done by subtracting the Z channel from world position with the Z channel of camera position and then multiplying that into the central mask.</p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>In Movement</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px"> The material has a velocity parameter that recieves X and Y values from a blueprint through a dynamic material instance, 
+                        so when you move a bottle the masks tilt to follow along.
+                    </p>
+                    <p style="padding-top: 25px"> The blueprint subtracts the current position of the object from the last one and multiplies it with delta time before adding 
+                        it to the velocity to smooth the movement. When you release the bottle it lerps from this input back to 0,0,0 based on delta time multiplied by a recovery parameter,
+                        allowing you to change how quickly it goes back.</p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/bottleanimationv2.gif" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+         <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleTranslucencySteps.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 50px">Faked Translucency</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">To create the illusion that the material is translucent I use a cubemap texture with unreals refraction node and then blend
+                        that with the color of the bottle through a lerp. To maintain the illusion you have to have a cubemap of the area where the bottles are placed, otherwise
+                        it will look a bit off.
+                    </p>
+                    <p style="padding-top: 25px">Left picture is the refracted cubemap, middle is it blended with the color and right is the final output. 
+                 
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Normals</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The normals are quite simple, for the central plane I use the UV output from the VirtualPlaneCoordinates node and add a texture of a water normal that
+                        is slightly panning and rotating. This is then lerped with the bottles normals to make it feel like the plane is inside of the bottle.
+                    </p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/Normals.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+
+                 <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleTextureComparison.png" alt="" class="img-fluid" height="50%">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 150px">Custom Textures</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px"> I also quickly added support for custom textures and tried it out on a bottle from a previous project I made. 
+                        
+                    </p>
+                    <p style="padding-top: 50px">At first it had some issues since the liquid mask didn't have a check to respect the labels of a custom texture.
+                        To fix this I just went into the material again and changed it so the liquid mask would also be multiplied by the textures alpha channel where I had masked
+                        off the labels.
+                    </p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row --> 
+
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 100px;">Shader Complexity</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
@@ -142,8 +299,102 @@
             </div><!-- end col -->
         </div><!-- end row -->   
 
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="message-box">                        
+                <h2 style="padding-top: 100px;">Bottle Tool HDA</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">I also made a very simple bottle creation HDA for this project. It uses a graph as input for the bottle sillhouette, allowing 
+                        the user to quickly and easily change it. Swapping between different interpolation modes for the points also lets the user play around with how sharp
+                        or smooth the bottle should be. It also has a few parameters like bottle height, cork width and target number of triangles.
+                    </p>
+                </div><!-- end title -->
+                <div class="container">
+                <div class="iframe-container">  
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/YAn0qTe6DNc" frameBorder="0">
+                    </iframe>
+                </div>
+            </div>
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="container section-title text-center">
+            <p style="padding-top: 50px">I had a lot of fun with this project and am pretty happy with the result but if I could go back and work more on it I would like to take another
+                look at how the central plane scales when it rotates since I believe my current solution could use improvement.
+            </p>
+
+            <div class="message-box">                        
+                <h2 style="padding-top: 50px;">Thanks for reading!</h2>
+             </div><!-- end messagebox -->
+        </div><!-- end title -->
+
+
+        <img src="uploads/Section.png" class="img-fluid">
+
+            
+
+            <div class="message-box">                        
+                <h2 style="padding-top: 50px;">Team</h2>
+             </div><!-- end messagebox -->
+              
+            <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Animators:</p>
+                <p>Emilia Eriksson</p>
+                <p>Rebecca Kornemalm</p>
+                <p>Theo Hübner Sallis</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Artists:</p>
+                <p>Emmett Motamed</p>
+                <p>Kim Betsgren</p>
+                <p>Marcus Carlsson</p>
+                <p>Melker Ljung</p>
+                <p>Milla Jaakkola Landin</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Designers:</p>
+                <p>Ahab Ibrahim</p>
+                <p>Erik Gatewood</p>
+                <p>Johan Rosdahl</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Programmers:</p>
+                <p>Abraham "Bam" Alberto</p>
+                <p>David Grahn</p>
+                <p>Elias Ronefors</p>
+                <p>Erik Edfors</p>
+                <p>Jonathan Rozenberg</p>
+                <p>Ylver Blum Buer</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Technical Artists:</p>
+                <p>Elvira Paxborn</p>
+                <p>Isabelle Neuman</p>
+                <p>Philip Bäcklund</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Sound:</p>
+                <p>Dennis Q Hammarlind</p>
+                <p>Melanie Silvhed</p>
+                <p>Ville Kemi</p>
+            </div><!-- end col -->
+           
+        </div><!-- end row --> 
+
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
     </div>
-	
+    </div>
+
+
 	<div id="portfolio" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
@@ -161,68 +412,52 @@
 			</div>
 		</div>
 	</div>
-    </div>	
+    </div>		
 
     
-	<div class="containerbig">
+    <div class="containerbig">
         <div class="gallery-list">
-
+            
             <div class="col-md-4 gallery-grid gal_tech">
                 <div class="gallery-single">
-                    <a href="moraKniv.html" target="_blank"> <img src="uploads/HouseGen/HouseGenThumbnail.png" class="img-fluid" alt="Image"></a>
+                    <a href="housegen.html" target="_blank"> <img src="uploads/HouseGen/HouseGenThumbnail.png" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/HouseGen/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
 
             <div class="col-md-4  gallery-grid gal_tech">
                 <div class="gallery-single" >
-                    <a href="bottleshader.html" target="_self"><img src="uploads/BottleShader/BottleShaderThumbnail.png" class="img-fluid" alt="Image"></a>
+                    <a href="bottleshader.html" target="_self"><img src="uploads/BottleShader/BottleShaderThumbnail.png" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/BottleShader/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
 				
 				
             <div class="col-md-4 gallery-grid gal_env">
                 <div class="gallery-single">
-                    <a href="inn.html" target="_blank"> <img src="uploads/Inn/Thumbnail.jpg" class="img-fluid" alt="Image"></a>
+                    <a href="inn.html" target="_blank"> <img src="uploads/Inn/Thumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/Inn/ThumbnailOveraly.png" class="img-fluid"> </div></a>
                 </div>
             </div>
 			
             <div class="col-md-4 gallery-grid gal_env">
                 <div class="gallery-single">
-                    <a href="moraKniv.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image"></a>
+                    <a href="moraKniv.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/MoraKniv/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
-            
-            <div class="col-md-4 gallery-grid gal_env">
-                <div class="gallery-single" >
-                    <img src="uploads/RolleiflexCamera/Thumbnail.jpg" class="img-fluid" alt="Image">
-                    <div class="img-overlay">
-                        <a href="uploads/Balling3.gif" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-                    </div>
+
+			<div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="fishershut.html" target="_blank"> <img src="uploads/FishersHut/FishersHutThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/FishersHut/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
 				
-				
             <div class="col-md-4 gallery-grid gal_env">
                 <div class="gallery-single">
-                    <a href="template.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image"></a>
-                </div>
-            </div>
-
-            <div class="col-md-4  gallery-grid gal_env">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
-
-            <div class="col-md-4  gallery-grid gal_env">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
-
-            <div class="col-md-4  gallery-grid gal_env">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
+                    <a href="crashsite.html" target="_blank"> <img src="uploads/CrashSite/CrashSiteThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/CrashSite/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
 
@@ -234,65 +469,67 @@
 	<div id="blog" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
-                <h3>Blog</h3>
-                <p>Currently under construction, please check back in the future!</p>
+                <h3>Projects</h3>
+                <p>Game projects from my time at The Game Assembly [TGA] and PlaygroundSquad [PSQ]!</p>
             </div><!-- end title -->
 			
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="finderskeepers.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
+							<img src="uploads/FindersKeepers/FindersKeepersThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Finders Keepers</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>Play as the nimble thief Penny while you infiltrate the kings castle to retrieve an imortant item for the Baron!</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="spite.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
+							<img src="uploads/Spite/SpiteThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Spite: Bleeding Skies</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>Play as earths chamption and wield divine power to bring down the cult of a false prophet who is spreading lies, fear and madness.</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="ecopoint.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
+							<img src="uploads/Ecopoint/EcopointThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>PSQ</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Ecopoint</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Kloss Ohlson</li>
+                                <li>in 9 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>The environment around you has become corrupted, as a researcher it is your task to find out why and put a stop to it.</p>
 						</div>
 					</div>
 				</div>
@@ -300,14 +537,13 @@
 		</div>	
 		</div>
 	</div>
-    </div>
 
     <div class="copyrights">
         <div class="container">
             <div class="footer-distributed">
                 <div class="footer-left">
                     <p class="footer-links">
-                        <a href="index.html#">Home</a>
+                        <a href="#">Home</a>
                         <a href="index.html#portfolio">Portfolio</a>
                         <a href="index.html#blog">Projects</a>
                         <a href="index.html#about">About</a>

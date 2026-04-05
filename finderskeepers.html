@@ -60,7 +60,7 @@
               <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#index.html#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#portfolio">Portfolio</a>
             </li>
 			<li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="index.html#blog">Projects</a>
@@ -69,20 +69,20 @@
               <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#about">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <div class="container section-title text-center">
+	
+        <div class="container section-title text-center">
             </div><!-- this is just for spacing -->
 
     <div id="projects" class="section lb">
-		<div class="container">
+		<div class="container text-center">
 			<div class="section-title text-center">
-                <h3>Bottle Shader +(Simple Bottle Generator)</h3>
+                <h3>Finders Keepers</h3>
             </div><!-- end title -->
             <div class="gallery-menu row">
 		
@@ -92,207 +92,283 @@
     <div class = "containerbig text-center">
 
         <div class="container section-title text-center">
-                <p>My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
-                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
-            </div><!-- end title -->
-        
-        <img src="uploads/BottleShader/BottlesClear.png" class="img-fluid" style = "padding: 10px;">
-
-        <div class="container section-title text-center">
-                <p style="padding-top: 50px">My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
-                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
-        </div><!-- end title -->  
-
-        <div class="iframe-container">  
-        <iframe class="responsive-iframe" src="tbexport.html" frameBorder="0" scroll="no">
-        </iframe>
-        </div>
-
-        <div class="container section-title text-center">
-                <p style="padding-top: 50px"></p>
-            </div><!-- end title -->
-
-        <img src="uploads/BottleShader/BottlesBeer.png" class="img-fluid">
-        
-        <div class="container section-title text-center">
-            <p style="padding-top: 50px">I also tried the shader out on a bottle with custom textures that I made for a previous project.
-                At first this had the unintended effect of the liquid being displayed in front of the label so I revisited the material
-                 to make the liquid mask respect the alpha channel from custom textures.
-            </p>
+                <p>Finders Keepers is my second group project at The Game Assembly. We worked in our own custom engine "Bean" to create a third person game where you play as the 
+                    master thief Penny and are on a mission to steal back a precious item from the kind for a Baron.</p>
         </div><!-- end title -->
 
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 20px;">
 
-        <div class="row" style="padding-bottom: 50px;">
+        <div class="message-box">                        
+                <h2 style="padding-top: 25px; padding-bottom: 25px;">Trailer</h2>
+        </div><!-- end messagebox -->
+
+        <div class="container section-title text-center">
+                    <p style="padding-top: 50px">[Trailer is currently WIP]  
+                    </p>
+                </div><!-- end title -->
+
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="message-box">                        
+            <h2 style="padding-top: 50px">My Contributions</h2>
+        </div><!-- end messagebox -->
+        
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/FindersKeepers/DashBubble.gif" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Shader Complexity</h2>
+                    <h2 style="padding-top: 50px">Dash Bubble Shader</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">If we look at the shader complexity we can see that the material is somewhat expensive but still cheaper compared to translucency.
-                        The translucent material I am using in this comparison is the unreal default with just a color input plugged in. 
+                    <p style="padding-top: 50px">The dash bubbles we can see in game use a shader that I first prototyped in Unreal and then created in HLSL so we could use it in
+                        out own engine. The bubbles also have a dissolve parameter that is changed by the programmers when the player jumps out of the bubble to make it disappaear and
+                        then reapper after a short while.
+                    </p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Bubble Popping</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">When the bubble pops there is also a particle burts of smaller bubbles that I created. Here we can see the dissolve shader I talked about above
+                        in action too!
                     </p>
                 </div><!-- end title -->
 
             </div><!-- end col -->
 
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/BottleShaderComparison.png" alt="" class="img-fluid">
+                    <img src="uploads/FindersKeepers/DashBubblePop.gif" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+         <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 50px">Environment Map Creation</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 25px">During this project I was the person who was responsible for creating all of the environment maps for the lighting to the different levels.
+                        Below are some screenshots from the game to showcase the different lights in the levels.
+                    </p>
+                </div>
+
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/FindersKeepers/CubemapShowcase_LVL01.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 200px">Environment Map Level 1</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 10px">A dungeon at the bottom of the kings castle.</p>
             </div><!-- end col -->
         </div><!-- end row -->   
 
-    </div>
-	
-	<div id="portfolio" class="section lb">
-		<div class="container">
-			<div class="section-title text-left">
-               <!-- <h3>Portfolio</h3>
-                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p> -->
-            </div><!-- end title -->
-            <div class="gallery-menu row">
-		<div class="col-lg-12" style="text-align: center;">
-			<div class="button-group filter-button-group text-center">
-				<button class="active" data-filter="*">All</button>
-				<button data-filter=".gal_tech">Technical Art</button>
-				<button data-filter=".gal_env">Other 3D Art</button>
-               <!-- <button data-filter=".gal_misc">Misc</button>
-				<button data-filter=".gal_fun">Funsies</button>-->
-			</div>
-		</div>
-	</div>
-    </div>	
+        <div class="row" style="padding-top: 50px;">
 
-    
-	<div class="containerbig">
-        <div class="gallery-list">
+            <div class="col-md-6">
 
-            <div class="col-md-4 gallery-grid gal_tech">
-                <div class="gallery-single">
-                    <a href="moraKniv.html" target="_blank"> <img src="uploads/HouseGen/HouseGenThumbnail.png" class="img-fluid" alt="Image"></a>
-                </div>
-            </div>
+                <div class="message-box">                        
+                    <h2 style="padding-top: 200px">Environment Map Level 2</h2>
+                </div><!-- end messagebox -->
 
-            <div class="col-md-4  gallery-grid gal_tech">
-                <div class="gallery-single" >
-                    <a href="bottleshader.html" target="_self"><img src="uploads/BottleShader/BottleShaderThumbnail.png" class="img-fluid" alt="Image"></a>
-                </div>
-            </div>
-				
-				
-            <div class="col-md-4 gallery-grid gal_env">
-                <div class="gallery-single">
-                    <a href="inn.html" target="_blank"> <img src="uploads/Inn/Thumbnail.jpg" class="img-fluid" alt="Image"></a>
-                </div>
-            </div>
-			
-            <div class="col-md-4 gallery-grid gal_env">
-                <div class="gallery-single">
-                    <a href="moraKniv.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image"></a>
-                </div>
-            </div>
+                <div class="container section-title text-center">
+                    <p style="padding-top: 10px"> The main halls of the castle.</p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/FindersKeepers/CubemapShowcase_LVL02.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+
+
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/FindersKeepers/CubemapShowcase_LVL03.png" alt="" class="img-fluid">
+            </div><!-- end col -->
             
-            <div class="col-md-4 gallery-grid gal_env">
-                <div class="gallery-single" >
-                    <img src="uploads/RolleiflexCamera/Thumbnail.jpg" class="img-fluid" alt="Image">
-                    <div class="img-overlay">
-                        <a href="uploads/Balling3.gif" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-            </div>
-				
-				
-            <div class="col-md-4 gallery-grid gal_env">
-                <div class="gallery-single">
-                    <a href="template.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image"></a>
-                </div>
-            </div>
+            <div class="col-md-6">
 
-            <div class="col-md-4  gallery-grid gal_env">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
+                <div class="message-box">                        
+                    <h2 style="padding-top: 200px">Environment Map Level 3</h2>
+                </div><!-- end messagebox -->
 
-            <div class="col-md-4  gallery-grid gal_env">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
+                <div class="container section-title text-center">
+                    <p style="padding-top: 10px">The tower at the top of the castle.</p>
+                </div><!-- end title -->
 
-            <div class="col-md-4  gallery-grid gal_env">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
+            </div><!-- end col -->
+        </div><!-- end row -->
+        </div>   
 
-        </div>
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="message-box">                        
+                <h2 style="padding-top: 100px;">Other Contributions</h2>
+        </div><!-- end messagebox -->
+
+        <div class="container section-title text-center">
+                    <p style="padding-top: 50px">During this project I also updated my Maya export plugin I made during the first game project so now the animators can
+                        choose their own export paths instead of it being hard coded to the project. I also made it give a warning at export in case the animators had
+                        removed namespaces in the workfile.
+                    </p>
+
+                    <p style="padding-top: 50px">Besides that I also did a lot of tweaking and polishing on other VFX that I originally wasn't the creator of and did a bunch of
+                        playtesting to help our level designers find bugs and issues with their maps.
+                    </p>
+        </div><!-- end title -->
+
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+            <div class="message-box">                        
+                <h2 style="padding-top: 50px;">Team</h2>
+             </div><!-- end messagebox -->
+              
+            <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-3">
+                <p style="padding-top: 50px">Animators:</p>
+                <p>Emilia Eriksson</p>
+                <p>Rebecca Kornemalm</p>
+                <p>Theo Hübner Sallis</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Artists:</p>
+                <p>Emmett Motamed</p>
+                <p>Kim Betsgren</p>
+                <p>Marcus Carlsson</p>
+                <p>Melker Ljung</p>
+                <p>Milla Jaakkola Landin</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Designers:</p>
+                <p>Ahab Ibrahim</p>
+                <p>Erik Gatewood</p>
+                <p>Johan Rosdahl</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Programmers:</p>
+                <p>Abraham "Bam" Alberto</p>
+                <p>David Grahn</p>
+                <p>Elias Ronefors</p>
+                <p>Erik Edfors</p>
+                <p>Jonathan Rozenberg</p>
+                <p>Ylver Blum Buer</p>
+            </div><!-- end col -->
+
+            <div class="col-md-2">
+                <p style="padding-top: 50px">Technical Artists:</p>
+                <p>Elvira Paxborn</p>
+                <p>Isabelle Neuman</p>
+                <p>Philip Bäcklund</p>
+            </div><!-- end col -->
+           
+        </div><!-- end row --> 
+
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="container section-title text-center">
+            <div class="message-box">                        
+                <h2 style="padding-top: 50px;">Thanks for reading!</h2>
+             </div><!-- end messagebox -->
+        </div><!-- end title -->
+
+        <img src="uploads/Section.png" class="img-fluid">
+
     </div>
-  
+    </div>
 	
 	
 	<div id="blog" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
-                <h3>Blog</h3>
-                <p>Currently under construction, please check back in the future!</p>
+                <h3>Projects</h3>
+                <p>Game projects from my time at The Game Assembly [TGA] and PlaygroundSquad [PSQ]!</p>
             </div><!-- end title -->
 			
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="finderskeepers.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
+							<img src="uploads/FindersKeepers/FindersKeepersThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Finders Keepers</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>Play as the nimble thief Penny while you infiltrate the kings castle to retrieve an imortant item for the Baron!</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="spite.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
+							<img src="uploads/Spite/SpiteThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Spite: Bleeding Skies</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>Play as earths chamption and wield divine power to bring down the cult of a false prophet who is spreading lies, fear and madness.</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="ecopoint.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/Balling3.gif" class="img-fluid" alt="post-img" />
+							<img src="uploads/Ecopoint/EcopointThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>PSQ</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Ecopoint</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Kloss Ohlson</li>
+                                <li>in 9 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>The environment around you has become corrupted, as a researcher it is your task to find out why and put a stop to it.</p>
 						</div>
 					</div>
 				</div>
@@ -300,14 +376,13 @@
 		</div>	
 		</div>
 	</div>
-    </div>
 
     <div class="copyrights">
         <div class="container">
             <div class="footer-distributed">
                 <div class="footer-left">
                     <p class="footer-links">
-                        <a href="index.html#">Home</a>
+                        <a href="#">Home</a>
                         <a href="index.html#portfolio">Portfolio</a>
                         <a href="index.html#blog">Projects</a>
                         <a href="index.html#about">About</a>
