@@ -1893,45 +1893,44 @@ hr.invis1 {
     margin-left: auto;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
 
     .containerbig {
-        max-width: 100;
+        min-width: 100;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
 
     .containerbig {
-        max-width: 738px;
+        min-width: 738px;
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
 
     .containerbig {
-        max-width: 962px;
+        min-width: 962px;
     }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (max-width: 1280px) {
     .containerbig {
-        max-width: 1250px;
+        min-width: 1250px;
     }
 }
 
-
-@media screen and (min-width: 1920px) {
+/* @media screen and (min-width: 1920px) {
 
     .containerbig {
         max-width: 1890px;
     }
-}
+} */
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1500px) {
 
     .containerbig {
-        width: 1890px;
+        max-width: 1600px;
     }
 }
 
