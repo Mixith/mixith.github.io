@@ -176,49 +176,57 @@
             
                 </div><!-- end title -->
             </div><!-- end col -->
-        </div><!-- end row -->   
+        </div><!-- end row -->  
+        
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;"> 
+        <div class="message-box">                        
+                    <h2 style="padding-top: 50px;">Roof</h2>
+        </div><!-- end messagebox -->
 
-        <div class="row" style="padding-bottom: 50px;">
+        <div class="container section-title text-center">
+                    <p style="padding-top: 25px">The roof is probably the most complex part of the HDA since it is generated based on another input. Below I'll break down some of
+                        the steps that go into it.
+                    </p>
+        </div><!-- end title -->
+        <img src="uploads/Section.png" class="img-fluid">
+
+        <div class="row" style="padding-bottom: 50px; padding-top: 50px;">
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Roof</h2>
+                    <h2>Roof Base</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">The roof is probably the most complex part of the HDA since it is generated based on another input. This gif covers some of
-                        the steps. I merge the walls and alt walls with a union, select the top faces and blast everything else.
+                    <p style="padding-top: 50px">To begin with I merge the walls and alt walls with a union, select the top faces and blast everything else.
                     </p>
-                    <p style="padding-top: 25px">Big roofs are subdivided and I find their longest edge by using a rotated version of them as a bounding box, I then pull that edge up.
-                        Small roofs check which side is closer to a wall and pull that edge up. </p>
-                    <p style="padding-top: 25px">I merge them and then remesh the result to use as points to place tiles, the tip of the roof is handled seperately to make sure the tiles
-                        are placed in the correct direction.</p>
+                    <p style="padding-top: 25px">After that they are measured so I can split them into "Big" and "Small" pieces based on their area. They are then
+                        scale them up individually so that they'll extend out from the house a bit.
+                    </p>
                 </div><!-- end title -->
 
             </div><!-- end col -->
 
             <div class="col-md-6">
-                    <img src="uploads/HouseGen/RoofProcess.gif" alt="" class="img-fluid" style="padding-top: 50px;">
+                    <img src="uploads/HouseGen/RoofProcessBase.gif" alt="" class="img-fluid" style="padding-top: 50px;">
             </div><!-- end col -->
         </div><!-- end row -->   
 
         <div class="row" style="padding-top: 50px;">
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/MiddlePlaneBottleShader.png" alt="" class="img-fluid">
+                    <img src="uploads/HouseGen/RoofProcessBig.gif" alt="" class="img-fluid">
             </div><!-- end col -->
             
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2 style="padding-top: 50px">Framing</h2>
+                    <h2 style="padding-top: 50px">Big Pieces</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">The central plane of the bottle is created using a modified version of the unreal "VirtualPlaneCoordinates" 
-                        node which I have gone into and tweaked a bit to make the UVs it outputs scale to my preference. I later 
-                        mask off the output with the help of a spheremask that gets it radius input from looking at the object bounds and rotation, making it fit the bottle.  
+                    <p style="padding-top: 50px">The big pieces are subdivided once and then I find their shortest inside edge by using a bounding box that is just the mesh turned
+                        90 degrees. After I found the shortest inside edge I pull up the longer one and dissolve the short one.   
                     </p>
-                    <p style="padding-top: 25px"> This isn't a flawless solution as it only accounts for round bottles.</p>
                 </div><!-- end title -->
             </div><!-- end col -->
         </div><!-- end row -->   
@@ -228,50 +236,47 @@
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Pillars</h2>
+                    <h2>Small Pieces</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">The side mask is a bit simpler. I get it by subtracting the object position from the world position which gives me the middle of the
-                        bottle. I want to lerp through a filled bottle and an empty bottle with my liquid controller so I adjust this mask with the help of the blue channel from the
-                        object bounds. I add it to one output of the lerp while subtracting it from the other to create the filled and empty versions.  
+                    <p style="padding-top: 50px">The small pieces don't get subdivided, instead I grab the edges that is close to walls and bring them up a bit.   
                     </p>
                 </div><!-- end title -->
 
             </div><!-- end col -->
 
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/BottleShaderSideMask.png" alt="" class="img-fluid">
+                    <img src="uploads/HouseGen/RoofProcessSmall.gif" alt="" class="img-fluid">
             </div><!-- end col -->
 
         </div><!-- end row -->   
 
                 <div class="row" style="padding-top: 50px;">
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/Bottleclippingplane.gif" alt="" class="img-fluid">
+                    <img src="uploads/HouseGen/RoofProcessTiles.gif" alt="" class="img-fluid">
             </div><!-- end col -->
             
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2 style="padding-top: 50px">Windows / Doors</h2>
+                    <h2 style="padding-top: 50px">Tiles</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">The central plane of the bottle also clips away when you view the bottle from below to prevent some funkyness with being able to see small
-                        parts of the central plane through the sidemask.
+                    <p style="padding-top: 50px">The big and small sections are merged, subdivided and then quad remeshed to get points to spawn roof tiles at.
+                        The tip of big roofs are handled seperatly to make sure the tiles face the correct direction.
                     </p>
-                    <p style="padding-top: 25px"> This is done by subtracting the Z channel from world position with the Z channel of camera position and then multiplying that into the central mask.</p>
                 </div><!-- end title -->
             </div><!-- end col -->
         </div><!-- end row -->   
-
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
         <div class="row" style="padding-top: 50px;">
 
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Chimney</h2>
+                    <h2>Framing</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
@@ -286,22 +291,20 @@
             </div><!-- end col -->
 
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/bottleanimationv2.gif" alt="" class="img-fluid">
+                    <img src="uploads/HouseGen/FramingProcess.gif" alt="" class="img-fluid">
             </div><!-- end col -->
 
         </div><!-- end row -->   
 
-        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
-
          <div class="row" style="padding-top: 50px;">
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/BottleTranslucencySteps.png" alt="" class="img-fluid">
+                    <img src="uploads/HouseGen/PillarsProcess.gif" alt="" class="img-fluid">
             </div><!-- end col -->
             
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2 style="padding-top: 50px">Faked Translucency</h2>
+                    <h2 style="padding-top: 50px">Pillars</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
@@ -315,46 +318,48 @@
             </div><!-- end col -->
         </div><!-- end row -->   
 
-        <div class="row" style="padding-top: 50px;">
+        <div class="row" style="padding-top: 25px;">
 
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Normals</h2>
+                    <h2>Windows / Doors</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">The normals are quite simple, for the central plane I use the UV output from the VirtualPlaneCoordinates node and add a texture of a water normal that
-                        is slightly panning and rotating. This is then lerped with the bottles normals to make it feel like the plane is inside of the bottle.
+                    <p style="padding-top: 50px">Windows take the inputs bounding box and makes it into one point at the center of the object. It then checks what
+                        type of wall it is near and places a window mesh according to that wall. This is so the user can have different windows for wall and alt wall inputs.
+                    </p>
+                    <p style="padding-top: 25px">Doors work the same way, with the exception that the point they keep is at the center bottom instead of the middle.
+                    </p>
+                    <p style="padding-top: 25px">The windows and doors use the wall normals to make sure they are rotated the correct way.
                     </p>
                 </div><!-- end title -->
 
             </div><!-- end col -->
 
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/Normals.png" alt="" class="img-fluid">
+                    <img src="uploads/HouseGen/WindowsProcess.gif" alt="" class="img-fluid">
             </div><!-- end col -->
 
         </div><!-- end row -->   
 
                  <div class="row" style="padding-top: 50px;">
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/BottleTextureComparison.png" alt="" class="img-fluid" height="50%">
+                    <img src="uploads/HouseGen/ChimneyProcess.gif" alt="" class="img-fluid" height="50%">
             </div><!-- end col -->
             
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2 style="padding-top: 150px">Custom Textures</h2>
+                    <h2 style="padding-top: 50px">Chimney</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px"> I also quickly added support for custom textures and tried it out on a bottle from a previous project I made. 
-                        
-                    </p>
-                    <p style="padding-top: 50px">At first it had some issues since the liquid mask didn't have a check to respect the labels of a custom texture.
-                        To fix this I just went into the material again and changed it so the liquid mask would also be multiplied by the textures alpha channel where I had masked
-                        off the labels.
+                    <p style="padding-top: 50px">Unlike the doors and windows the chimney directly uses its input as a base for its shape, this gives them a little more variety.</p>
+                    <p style="padding-top: 50px">First I make a subdivided box from the shape, then I select the loop cuts and bring them closer together. I select the top verticies
+                        by normal direction and then promote them to edges and pull them in a bit. After that I select the top face with normals again and extrude it twice to make the
+                        top of the chimney.
                     </p>
                 </div><!-- end title -->
             </div><!-- end col -->
@@ -364,19 +369,23 @@
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2 style="padding-top: 100px;">Shader Complexity</h2>
+                    <h2 style="padding-top: 100px;">Combining it all</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">If we look at the shader complexity we can see that the material is somewhat expensive but still cheaper compared to translucency.
-                        The translucent material I am using in this comparison is the unreal default with just a color input plugged in. 
+                    <p style="padding-top: 50px">First I merge the original outputs for the walls and alt walls. After that is done I cut out the shape for windows and doors and place
+                        them down. The basic framing / pillars comes in, they are then filed down along with the walls to make space for the roof and the rest of the framing.  
+                    </p>
+
+                    <p style="padding-top: 50px">The materials for the building have already been applied in their own respective steps so when it is put into unreal they automatically
+                        show up. Note: Some of the materials used in this project are megascans at the moment.
                     </p>
                 </div><!-- end title -->
 
             </div><!-- end col -->
 
             <div class="col-md-6">
-                    <img src="uploads/BottleShader/BottleShaderComparison.png" alt="" class="img-fluid">
+                    <img src="uploads/HouseGen/CombiningProcess.gif" alt="" class="img-fluid">
             </div><!-- end col -->
         </div><!-- end row -->   
 
