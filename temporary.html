@@ -60,29 +60,29 @@
               <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#portfolio">Portfolio</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#blog">Projects</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#about">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <div class="container section-title text-center">
+	
+     <div class="container section-title text-center">
             </div><!-- this is just for spacing -->
 
     <div id="projects" class="section lb">
 		<div class="container text-center">
 			<div class="section-title text-center">
-                <h3>Bottle Shader +(Simple Bottle Generator)</h3>
+                <h3>House Generator</h3>
             </div><!-- end title -->
             <div class="gallery-menu row">
 		
@@ -92,24 +92,117 @@
     <div class = "containerbig text-center">
 
         <div class="container section-title text-center">
-                <p>My goal with this project was to make an opaque shader that mimics translucent bottles. The initial idea I had for this project was a bit simpler 
-                    but after looking at bottles like the ones from Half-Life Alyx I wanted to try something similar.</p>
-        </div><!-- end title -->
+                <p>The goal for this project was to use Houdini to create a house generator that is simple to work with while giving the user a lot of control. 
+                    This is my first "bigger" Houdini project and I had a bunch of fun making it! Below are some houses generated with the tool and further below are some breakdowns.</p>
+            </div><!-- end title -->
         
         <img src="uploads/Showcase.png" class="img-fluid" width="80%">
 
-        <img src="uploads/BottleShader/BottleMedieval.png" class="img-fluid" style = "padding: 10px;">
+        <img src="uploads/BottleShader/BottlesClear.png" class="img-fluid" style = "padding: 10px;">
 
-        <img src="uploads/BottleShader/BeerBottleLogo.png" class="img-fluid" style = "padding: 10px;">
-        
         <div class="container section-title text-center">
-            <p style="padding-top: 10px">
-            </p>
+                <p style="padding-top: 50px"></p>
         </div><!-- end title -->
 
+        
+        <img src="uploads/BottleShader/BottlesBeer.png" class="img-fluid">
+        
+        <div class="container section-title text-center">
+            <p style="padding-top: 50px">
+            </p>
+        </div><!-- end title -->
+        
         <img src="uploads/Breakdown.png" class="img-fluid" width="80%">
 
         <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/HouseGen/HouseGenInput.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 100px">Input</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The inputs for the tool are just unreals default cubes with different materials depending on what you want the
+                        cube to become. I plan to continue the creation of more inputs.
+                    </p>
+                </div><!-- end title -->
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                         <div class="container section-title text-left">
+                            <p>Existing Inputs:</p>
+                            <p style="padding-top: 15px">- Wall</p>
+                            <p>- Alt Wall</p>
+                            <p>- Door</p>
+                            <p>- Window</p>
+                            <p>- Chimneys</p>
+                        </div><!-- end title -->
+                    </div>
+
+                    <div class="col-md-6">
+                         <div class="container section-title text-left">
+                            <p>Planned Inputs:</p>
+                            <p style="padding-top: 15px">- Tower</p>
+                            <p>- Balcony / Archs</p>
+                        </div><!-- end title -->
+                    </div>
+
+                </div> <!-- end row-->
+                
+
+            </div> <!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/HouseGen/HouseGenOutput.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 100px">Output</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The boxes then run trough the graph adding pillars, roofs, beams and also turning the window / door inputs
+                    into points to spawn other meshes at. There is also functionality to customize the window / door types independently for the wall and alt wall inputs!
+                    </p>
+            
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-bottom: 50px;">
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Roof</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The roof is probably the most complex part of the HDA since it is generated based on another input. This gif covers some of
+                        the steps. I merge the walls and alt walls with a union, select the top faces and blast everything else.
+                    </p>
+                    <p style="padding-top: 25px">Big roofs are subdivided and I find their longest edge by using a rotated version of them as a bounding box, I then pull that edge up.
+                        Small roofs check which side is closer to a wall and pull that edge up. </p>
+                    <p style="padding-top: 25px">I merge them and then remesh the result to use as points to place tiles, the tip of the roof is handled seperately to make sure the tiles
+                        are placed in the correct direction.</p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/HouseGen/RoofProcess.gif" alt="" class="img-fluid" style="padding-top: 50px;">
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-top: 50px;">
             <div class="col-md-6">
                     <img src="uploads/BottleShader/MiddlePlaneBottleShader.png" alt="" class="img-fluid">
             </div><!-- end col -->
@@ -117,7 +210,7 @@
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2 style="padding-top: 50px">Central Plane</h2>
+                    <h2 style="padding-top: 50px">Framing</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
@@ -130,12 +223,12 @@
             </div><!-- end col -->
         </div><!-- end row -->   
 
-        <div class="row" style="padding-bottom: 50px;">
+        <div class="row" style="padding-top: 50px;">
 
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Side Mask</h2>
+                    <h2>Pillars</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
@@ -153,11 +246,125 @@
 
         </div><!-- end row -->   
 
-        <div class="row" style="padding-bottom: 50px;">
+                <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/Bottleclippingplane.gif" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Shader Complexity</h2>
+                    <h2 style="padding-top: 50px">Windows / Doors</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The central plane of the bottle also clips away when you view the bottle from below to prevent some funkyness with being able to see small
+                        parts of the central plane through the sidemask.
+                    </p>
+                    <p style="padding-top: 25px"> This is done by subtracting the Z channel from world position with the Z channel of camera position and then multiplying that into the central mask.</p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Chimney</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px"> The material has a velocity parameter that recieves X and Y values from a blueprint through a dynamic material instance, 
+                        so when you move a bottle the masks tilt to follow along.
+                    </p>
+                    <p style="padding-top: 25px"> The blueprint subtracts the current position of the object from the last one and multiplies it with delta time before adding 
+                        it to the velocity to smooth the movement. When you release the bottle it lerps from this input back to 0,0,0 based on delta time multiplied by a recovery parameter,
+                        allowing you to change how quickly it goes back.</p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/bottleanimationv2.gif" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+         <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleTranslucencySteps.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 50px">Faked Translucency</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">To create the illusion that the material is translucent I use a cubemap texture with unreals refraction node and then blend
+                        that with the color of the bottle through a lerp. To maintain the illusion you have to have a cubemap of the area where the bottles are placed, otherwise
+                        it will look a bit off.
+                    </p>
+                    <p style="padding-top: 25px">Left picture is the refracted cubemap, middle is it blended with the color and right is the final output. 
+                 
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+
+        <div class="row" style="padding-top: 50px;">
+
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2>Normals</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The normals are quite simple, for the central plane I use the UV output from the VirtualPlaneCoordinates node and add a texture of a water normal that
+                        is slightly panning and rotating. This is then lerped with the bottles normals to make it feel like the plane is inside of the bottle.
+                    </p>
+                </div><!-- end title -->
+
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/Normals.png" alt="" class="img-fluid">
+            </div><!-- end col -->
+
+        </div><!-- end row -->   
+
+                 <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+                    <img src="uploads/BottleShader/BottleTextureComparison.png" alt="" class="img-fluid" height="50%">
+            </div><!-- end col -->
+            
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 150px">Custom Textures</h2>
+                </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px"> I also quickly added support for custom textures and tried it out on a bottle from a previous project I made. 
+                        
+                    </p>
+                    <p style="padding-top: 50px">At first it had some issues since the liquid mask didn't have a check to respect the labels of a custom texture.
+                        To fix this I just went into the material again and changed it so the liquid mask would also be multiplied by the textures alpha channel where I had masked
+                        off the labels.
+                    </p>
+                </div><!-- end title -->
+            </div><!-- end col -->
+        </div><!-- end row --> 
+
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-6">
+
+                <div class="message-box">                        
+                    <h2 style="padding-top: 100px;">Shader Complexity</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
@@ -173,8 +380,35 @@
             </div><!-- end col -->
         </div><!-- end row -->   
 
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="message-box">                        
+                <h2 style="padding-top: 100px;">Challenges & Reflection</h2>
+        </div><!-- end messagebox -->
+
+                <div class="container section-title text-center">
+                    <p style="padding-top: 50px">The biggest challenge with this project has by far been the roof. There were a lot of possibilities and edge cases
+                        that I hadn't considered and had to spend a bunch of time fixing, even now there is still some things I'd like to improve on.
+                    </p>
+
+                    <p style="padding-top: 50px">With that said, this project has been a lot of fun and I learnt so much from working on it. I am pretty happy with
+                        what I've managed to achieve and am planning to continue with the project on my own time to improve it further!
+                    </p>
+                </div><!-- end title -->
+
+        <img src="uploads/Section.png" class="img-fluid" style="padding-top: 50px;">
+
+        <div class="container section-title text-center">
+            <div class="message-box">                        
+                <h2 style="padding-top: 50px;">Thanks for reading!</h2>
+             </div><!-- end messagebox -->
+        </div><!-- end title -->
+
+        <img src="uploads/Section.png" class="img-fluid">
+
     </div>
-	
+    </div>
+
 	<div id="portfolio" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
@@ -186,121 +420,127 @@
 			<div class="button-group filter-button-group text-center">
 				<button class="active" data-filter="*">All</button>
 				<button data-filter=".gal_tech">Technical Art</button>
-				<button data-filter=".gal_env">Environment Art</button>
-                <button data-filter=".gal_misc">Misc</button>
-				<button data-filter=".gal_fun">Funsies</button>
+				<button data-filter=".gal_env">Other 3D Art</button>
+               <!-- <button data-filter=".gal_misc">Misc</button>
+				<button data-filter=".gal_fun">Funsies</button>-->
 			</div>
 		</div>
 	</div>
     </div>		
-
     
 	<div class="containerbig">
         <div class="gallery-list">
-
-            <div class="col-md-4 gallery-grid gal_misc gal_fun">
+            
+            <div class="col-md-4 gallery-grid gal_tech">
                 <div class="gallery-single">
-                    <a href="moraKniv.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image"></a>
+                    <a href="housegen.html" target="_blank"> <img src="uploads/HouseGen/HouseGenThumbnail.png" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/HouseGen/ThumbnailOverlay.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
+
+            <div class="col-md-4  gallery-grid gal_tech">
+                <div class="gallery-single" >
+                    <a href="bottleshader.html" target="_self"><img src="uploads/BottleShader/BottleShaderThumbnail.png" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/BottleShader/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
 				
-            <div class="col-md-4 gallery-grid gal_misc">
-                <div class="gallery-single" >
-                    <img src="uploads/RolleiflexCamera/Thumbnail.jpg" class="img-fluid" alt="Image">
-                    <div class="img-overlay">
-                        <a href="uploads/Balling3.gif" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-                    </div>
+				
+            <div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="inn.html" target="_blank"> <img src="uploads/Inn/Thumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/Inn/ThumbnailOveraly.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
+			
+            <div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="moraKniv.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/MoraKniv/ThumbnailOverlay.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
+
+			<div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="fishershut.html" target="_blank"> <img src="uploads/FishersHut/FishersHutThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/FishersHut/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
 				
             <div class="col-md-4 gallery-grid gal_env">
                 <div class="gallery-single">
-                    <a href="inn.html" target="_blank"> <img src="uploads/Inn/Thumbnail.jpg" class="img-fluid" alt="Image"></a>
+                    <a href="crashsite.html" target="_blank"> <img src="uploads/CrashSite/CrashSiteThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/CrashSite/ThumbnailOverlay.png" class="img-fluid"> </div></a>
                 </div>
             </div>
-				
-            <div class="col-md-4  gallery-grid gal_env gal_tech">
-                <div class="gallery-single" >
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
-				
-            <div class="col-md-4  gallery-grid gal_tech gal_fun">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
-				
-            <div class="col-md-4  gallery-grid gal_fun gal_tech">
-                <div class="gallery-single">
-                    <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
-                </div>
-            </div>
+
         </div>
     </div>
 	
 	<div id="blog" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
-                <h3>Blog</h3>
-                <p>Currently under construction, please check back in the future!</p>
+                <h3>Projects</h3>
+                <p>Game projects from my time at The Game Assembly [TGA] and PlaygroundSquad [PSQ]!</p>
             </div><!-- end title -->
 			
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="finderskeepers.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/blog-01.jpg" class="img-fluid" alt="post-img" />
+							<img src="uploads/FindersKeepers/FindersKeepersThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Finders Keepers</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>Play as the nimble thief Penny while you infiltrate the kings castle to retrieve an imortant item for the Baron!</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="spite.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/blog-02.jpg" class="img-fluid" alt="post-img" />
+							<img src="uploads/Spite/SpiteThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Spite: Bleeding Skies</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>Play as earths chamption and wield divine power to bring down the cult of a false prophet who is spreading lies, fear and madness.</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="ecopoint.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/blog-03.jpg" class="img-fluid" alt="post-img" />
+							<img src="uploads/Ecopoint/EcopointThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>01</span>
-								<span>Apr</span>
+								<span></span>
+								<span>PSQ</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>???</h4>
+							<h4>Ecopoint</h4>
 							<ul>
-                                <li>by Elvira Paxborn</li>
-                                <li>Apr 1, 2026</li>
+                                <li>by Kloss Ohlson</li>
+                                <li>in 9 Weeks</li>
                             </ul>
-							<p>Currently under construction, check back later.</p>
+							<p>The environment around you has become corrupted, as a researcher it is your task to find out why and put a stop to it.</p>
 						</div>
 					</div>
 				</div>
@@ -308,7 +548,6 @@
 		</div>	
 		</div>
 	</div>
-    </div>
 
     <div class="copyrights">
         <div class="container">
@@ -316,10 +555,10 @@
                 <div class="footer-left">
                     <p class="footer-links">
                         <a href="#">Home</a>
-                        <a href="#">Portfolio</a>
-                        <a href="#">Blog</a>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
+                        <a href="index.html#portfolio">Portfolio</a>
+                        <a href="index.html#blog">Projects</a>
+                        <a href="index.html#about">About</a>
+                        <a href="index.html#about">Contact</a>
                     </p>
                     <p class="footer-company-name">All Rights Reserved. &copy; 2026 <a href="#">Elvira Paxborn </a> Design By : 
 					<a href="https://html.design/">html design</a></p>
