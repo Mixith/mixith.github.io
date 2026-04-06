@@ -170,7 +170,7 @@
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">The boxes then run trough the graph adding pillars, roofs, beams and also turning the window / door inputs
+                    <p style="padding-top: 50px">The boxes then go trough the graph to add pillars, roofs, beams and also turning the window / door inputs
                     into points to spawn other meshes at. There is also functionality to customize the window / door types independently for the wall and alt wall inputs!
                     </p>
             
@@ -184,8 +184,8 @@
         </div><!-- end messagebox -->
 
         <div class="container section-title text-center">
-                    <p style="padding-top: 25px">The roof is probably the most complex part of the HDA since it is generated based on another input. Below I'll break down some of
-                        the steps that go into it.
+                    <p style="padding-top: 25px">The roof is probably the most complex part of the HDA and I had to do a lot of iteration on it to make sure the different
+                        parts played nicely together. Below I'll break down some of the steps that go into it.
                     </p>
         </div><!-- end title -->
         <img src="uploads/Section.png" class="img-fluid">
@@ -194,14 +194,14 @@
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Roof Base</h2>
+                    <h2 style="padding-top: 100px;">Roof Base</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
                     <p style="padding-top: 50px">To begin with I merge the walls and alt walls with a union, select the top faces and blast everything else.
                     </p>
                     <p style="padding-top: 25px">After that they are measured so I can split them into "Big" and "Small" pieces based on their area. They are then
-                        scale them up individually so that they'll extend out from the house a bit.
+                        scaled up so that they'll extend out from the house a bit.
                     </p>
                 </div><!-- end title -->
 
@@ -225,7 +225,7 @@
 
                 <div class="container section-title text-center">
                     <p style="padding-top: 50px">The big pieces are subdivided once and then I find their shortest inside edge by using a bounding box that is just the mesh turned
-                        90 degrees. After I found the shortest inside edge I pull up the longer one and dissolve the short one.   
+                        90 degrees. After I find the shortest edge I use that to find the longest one and translate it up, dissolving the short one afterwards.   
                     </p>
                 </div><!-- end title -->
             </div><!-- end col -->
@@ -236,11 +236,12 @@
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2>Small Pieces</h2>
+                    <h2 style="padding-top: 100px;">Small Pieces</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">The small pieces don't get subdivided, instead I grab the edges that is close to walls and bring them up a bit.   
+                    <p style="padding-top: 50px">The small pieces don't get subdivided like the big ones, instead I check what edge is closest to the wall and translate it up
+                        to create a slanted roof.  
                     </p>
                 </div><!-- end title -->
 
@@ -280,12 +281,18 @@
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px"> The material has a velocity parameter that recieves X and Y values from a blueprint through a dynamic material instance, 
-                        so when you move a bottle the masks tilt to follow along.
+                    <p style="padding-top: 50px"> Framing is only done on the alt walls. First I take the alt wall input and get all of the edges to use in a polywire
+                         for the basic frame around the walls.
                     </p>
-                    <p style="padding-top: 25px"> The blueprint subtracts the current position of the object from the last one and multiplies it with delta time before adding 
-                        it to the velocity to smooth the movement. When you release the bottle it lerps from this input back to 0,0,0 based on delta time multiplied by a recovery parameter,
-                        allowing you to change how quickly it goes back.</p>
+
+                    <p style="padding-top: 25px"> The other beams use a resampled bounding box of the input to get more points to use in beam creation. To make sure
+                        the beams don't overlap with the base frame I downscale the mesh slightly and use it as a bounding object when grouping my nodes, blasting everything that
+                        isn't inside the bounds. After this I sort the points and create lines using the add node. These lines are then run through a sweep node to create the beams.
+                        This is repeated for the other direction and the vertical beams.
+                    </p>
+                       <p style="padding-top: 25px">
+                        This is repeated for the other direction and the vertical beams.
+                    </p>
                 </div><!-- end title -->
 
             </div><!-- end col -->
@@ -304,15 +311,17 @@
             <div class="col-md-6">
 
                 <div class="message-box">                        
-                    <h2 style="padding-top: 50px">Pillars</h2>
+                    <h2 style="padding-top: 0px">Pillars</h2>
                 </div><!-- end messagebox -->
 
                 <div class="container section-title text-center">
-                    <p style="padding-top: 50px">To create the illusion that the material is translucent I use a cubemap texture with unreals refraction node and then blend
-                        that with the color of the bottle through a lerp. To maintain the illusion you have to have a cubemap of the area where the bottles are placed, otherwise
-                        it will look a bit off.
+                    <p style="padding-top: 50px">Pillars are created by making a curve from the outer edges of the input, removing any points with less than 3 neighbours
+                        and then sorting the points before putting them through an add node to create vertical lines. The lines created from the add are then put into a sweep node
+                        and have their endcaps filled before removing leftover points.
                     </p>
-                    <p style="padding-top: 25px">Left picture is the refracted cubemap, middle is it blended with the color and right is the final output. 
+                    <p style="padding-top: 25px">The lower part of the pillar is modelled out from a box with some transforms and extrudes to later be copied to the lower points of the
+                        lines created earlier for the pillars.
+                    </p>
                  
                 </div><!-- end title -->
             </div><!-- end col -->
