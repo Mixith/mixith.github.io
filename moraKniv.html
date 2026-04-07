@@ -45,10 +45,10 @@
     <!-- END LOADER -->
 	
     <!-- Navigation -->
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-dark js-scroll-trigger" href="#page-top">
-			<img class="img-fluid" src="images/logo.png" alt="" />
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+			<img class="img-fluid" src="uploads/elvira_logo.png" alt="" />
 		</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -56,65 +56,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
+          <!--  <li class="nav-item">
               <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
-            </li>
+            </li> -->
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#portfolio">Portfolio</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#blog">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="index.html#about">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-	<!-- main banner
-    <section id="home" class="main-banner" style="background: url('uploads/MoraKniv/MoraOverview.jpg')">
-		<div class="heading">
-			<h1>Mora Sheath Knife No. 98/203</h1>
-			<p>Speed prop made in one day, reference taken from an auction on "Tradera".</p>
-
-		</div>
-	</section>
-    -->
-
-    <!-- This cloud shit and I have a fucking vendetta against each other-->
-	<svg id="clouds2" class="hidden-md" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
-        <path d="M-5 100 Q 0 -35 5 100 Z
-            M0 100 Q 5 -80 10 100
-            M5 100 Q 10 -30 15 100
-            M10 100 Q 15 -55 20 100
-            M15 100 Q 20 -45 25 100
-            M20 100 Q 25 -30 30 100
-            M25 100 Q 30 -65 35 100
-            M30 100 Q 35 -45 40 100
-            M35 100 Q 40 -40 45 100
-            M40 100 Q 45 -30 50 100
-            M45 100 Q 50 -60 55 100
-            M50 100 Q 55 -40 60 100
-            M55 100 Q 60 -65 65 100
-            M60 100 Q 65 -40 70 100
-            M65 100 Q 70 -85 75 100
-            M70 100 Q 75 -30 80 100
-            M75 100 Q 80 -40 85 100
-            M80 100 Q 85 -70 90 100
-            M85 100 Q 90 -70 95 100
-            M90 100 Q 95 -35 100 100
-            M95 100 Q 100 -45 105 100 Z">
-        </path>
-    </svg>
 	
-	<div id="portfolio" class="section lb">
+    <div id="portfolio" class="section lb">
 		<div class="container">
 			<div class="section-title text-center">
-                <h3>Mora Sheath Knife No. 98/203</h3>
+                <h3 style="padding-top: 50px;">Mora Sheath Knife No. 98/203</h3>
                 <p>This is a speed prop that I created in one day with a reference taken from the swedish auction site "Tradera".</p>
             </div><!-- end title -->
             <div class="gallery-menu row">
@@ -135,92 +100,142 @@
         <img src="uploads/MoraKniv/MoraSecondAngle.jpg" class="img-fluid" style = "padding: 10px;">
     </div>
 
-<!-- Individual containers
-     <div class = "container-fluid text-center">
-        <img src="uploads/MoraKniv/MoraOverview.jpg" class="img-fluid" style = "padding: 10px;">
 
-        		<div class="section-title text-center">
-                <p>Speed prop made in one day, reference taken from an auction on "Tradera".</p>
-    </div>
+	<div id="portfolio" class="section lb">
+		<div class="container">
+			<div class="section-title text-left">
+               <!-- <h3>Portfolio</h3>
+                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p> -->
+            </div><!-- end title -->
+            <div class="gallery-menu row">
+		<div class="col-lg-12" style="text-align: center;">
+			<div class="button-group filter-button-group text-center">
+				<button class="active" data-filter="*">All</button>
+				<button data-filter=".gal_tech">Technical Art</button>
+				<button data-filter=".gal_env">Other 3D Art</button>
+               <!-- <button data-filter=".gal_misc">Misc</button>
+				<button data-filter=".gal_fun">Funsies</button>-->
+			</div>
+		</div>
+	</div>
+    </div>		
 
-    <div class = "container-fluid text-center"> 
-        <iframe src="tbexport.html" allowfullscreen="false" height="1080" width="1840"></iframe>
-    </div>
+    
+    <div class="containerbig">
+        <div class="gallery-list">
+            
+            <div class="col-md-4 gallery-grid gal_tech">
+                <div class="gallery-single">
+                    <a href="housegen.html" target="_blank"> <img src="uploads/HouseGen/HouseGenThumbnail.png" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/HouseGen/ThumbnailOverlay.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
 
-    <div class = "container-fluid text-center">
-        <img src="uploads/MoraKniv/MoraCloseUp.jpg" class="img-fluid" style = "padding: 10px;">
-    </div>
+            <div class="col-md-4  gallery-grid gal_tech">
+                <div class="gallery-single" >
+                    <a href="bottleshader.html" target="_self"><img src="uploads/BottleShader/BottleShaderThumbnail.png" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/BottleShader/ThumbnailOverlay.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
+				
+				
+            <div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="inn.html" target="_blank"> <img src="uploads/Inn/Thumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/Inn/ThumbnailOveraly.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
+			
+            <div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="moraKniv.html" target="_blank"> <img src="uploads/MoraKniv/MoraThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/MoraKniv/ThumbnailOverlay.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
 
-    <div class = "container-fluid text-center">
-        <img src="uploads/MoraKniv/MoraSecondAngle.jpg" class="img-fluid" style = "padding: 10px;">
+			<div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="fishershut.html" target="_blank"> <img src="uploads/FishersHut/FishersHutThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/FishersHut/ThumbnailOverlay.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
+				
+            <div class="col-md-4 gallery-grid gal_env">
+                <div class="gallery-single">
+                    <a href="crashsite.html" target="_blank"> <img src="uploads/CrashSite/CrashSiteThumbnail.jpg" class="img-fluid" alt="Image">
+                    <div class="img-overlay"><img src="uploads/CrashSite/ThumbnailOverlay.png" class="img-fluid"> </div></a>
+                </div>
+            </div>
+
+        </div>
     </div>
-    -->
+  
+	
 	
 	<div id="blog" class="section lb">
 		<div class="container">
 			<div class="section-title text-left">
-                <h3>Blog</h3>
-                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
+                <h3>Projects</h3>
+                <p>Game projects from my time at The Game Assembly [TGA] and PlaygroundSquad [PSQ]!</p>
             </div><!-- end title -->
 			
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="finderskeepers.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/blog-01.jpg" class="img-fluid" alt="post-img" />
+							<img src="uploads/FindersKeepers/FindersKeepersThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>06</span>
-								<span>Aug</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>Quisque auctor lectus interdum nisl accumsan venenatis.</h4>
+							<h4>Finders Keepers</h4>
 							<ul>
-                                <li>by admin</li>
-                                <li>Apr 21, 2018</li>
-                                <li><a href="#"><b> Comments</b></a></li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
+							<p>Play as the nimble thief Penny while you infiltrate the kings castle to retrieve an imortant item for the Baron!</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="spite.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/blog-02.jpg" class="img-fluid" alt="post-img" />
+							<img src="uploads/Spite/SpiteThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>30</span>
-								<span>Aug</span>
+								<span></span>
+								<span>TGA</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>Quisque auctor lectus interdum nisl accumsan venenatis.</h4>
+							<h4>Spite: Bleeding Skies</h4>
 							<ul>
-                                <li>by admin</li>
-                                <li>Apr 21, 2018</li>
-                                <li><a href="#"><b> Comments</b></a></li>
+                                <li>by Water Leaks</li>
+                                <li>in 15 Weeks</li>
                             </ul>
-							<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
+							<p>Play as earths chamption and wield divine power to bring down the cult of a false prophet who is spreading lies, fear and madness.</p>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4 col-sm-6 col-lg-4">
-					<div class="post-box">
+					<a href="ecopoint.html"><div class="post-box">
 						<div class="post-thumb">
-							<img src="uploads/blog-03.jpg" class="img-fluid" alt="post-img" />
+							<img src="uploads/Ecopoint/EcopointThumbnail.png" class="img-fluid" alt="post-img" />
 							<div class="date">
-								<span>06</span>
-								<span>Aug</span>
+								<span></span>
+								<span>PSQ</span>
 							</div>
-						</div>
+						</div></a>
 						<div class="post-info">
-							<h4>Quisque auctor lectus interdum nisl accumsan venenatis.</h4>
+							<h4>Ecopoint</h4>
 							<ul>
-                                <li>by admin</li>
-                                <li>Apr 21, 2018</li>
-                                <li><a href="#"><b> Comments</b></a></li>
+                                <li>by Kloss Ohlson</li>
+                                <li>in 9 Weeks</li>
                             </ul>
-							<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
+							<p>The environment around you has become corrupted, as a researcher it is your task to find out why and put a stop to it.</p>
 						</div>
 					</div>
 				</div>
@@ -235,10 +250,10 @@
                 <div class="footer-left">
                     <p class="footer-links">
                         <a href="#">Home</a>
-                        <a href="#">Portfolio</a>
-                        <a href="#">Blog</a>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
+                        <a href="index.html#portfolio">Portfolio</a>
+                        <a href="index.html#blog">Projects</a>
+                        <a href="index.html#about">About</a>
+                        <a href="index.html#about">Contact</a>
                     </p>
                     <p class="footer-company-name">All Rights Reserved. &copy; 2026 <a href="#">Elvira Paxborn </a> Design By : 
 					<a href="https://html.design/">html design</a></p>
