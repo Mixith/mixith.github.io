@@ -1893,30 +1893,30 @@ hr.invis1 {
     margin-left: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
 
     .containerbig {
-        min-width: 100;
+        max-width: 100;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
 
     .containerbig {
-        min-width: 738px;
+        max-width: 738px;
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
 
     .containerbig {
-        min-width: 962px;
+        max-width: 962px;
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1280px) {
     .containerbig {
-        min-width: 1250px;
+        max-width: 1250px;
     }
 }
 
